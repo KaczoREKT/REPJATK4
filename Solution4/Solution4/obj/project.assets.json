@@ -460,19 +460,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/kaczorekt/.nuget/packages/": {}
+    "C:\\Users\\Kollataja\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kaczorekt/REPJATK4/Solution4/Solution4/Solution4.csproj",
+      "projectUniqueName": "F:\\REPJATK4\\Solution4\\Solution4\\Solution4.csproj",
       "projectName": "Solution4",
-      "projectPath": "/Users/kaczorekt/REPJATK4/Solution4/Solution4/Solution4.csproj",
-      "packagesPath": "/Users/kaczorekt/.nuget/packages/",
-      "outputPath": "/Users/kaczorekt/REPJATK4/Solution4/Solution4/obj/",
+      "projectPath": "F:\\REPJATK4\\Solution4\\Solution4\\Solution4.csproj",
+      "packagesPath": "C:\\Users\\Kollataja\\.nuget\\packages\\",
+      "outputPath": "F:\\REPJATK4\\Solution4\\Solution4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/kaczorekt/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Kollataja\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -524,7 +524,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/kaczorekt/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Kollataja\\.dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

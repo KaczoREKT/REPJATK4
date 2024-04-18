@@ -5,23 +5,23 @@ namespace Solution4.Controllers;
 [Route("api/[controller]")]
 public class AnimalsController : ControllerBase
 {
-    private readonly AnimalService _animalService;
+    private readonly AnimalService animalService;
 
     public AnimalsController(AnimalService animalService)
     {
-        _animalService = animalService;
+        this.animalService = animalService;
     }
 
     [HttpGet]
     public ActionResult<List<Animal>> GetAll()
     {
-        return _animalService.GetAll();
+        return animalService.GetAll();
     }
 
     [HttpGet("{id}")]
     public ActionResult<Animal> GetById(int id)
     {
-        var animal = _animalService.GetById(id);
+        var animal = animalService.GetById(id);
         if (animal == null)
         {
             return NotFound();
@@ -32,56 +32,33 @@ public class AnimalsController : ControllerBase
     [HttpPost]
     public ActionResult<Animal> Create(Animal animal)
     {
-        _animalService.Create(animal);
+        animalService.Create(animal);
         return CreatedAtAction(nameof(GetById), new { id = animal.Id }, animal);
     }
 
     [HttpPut("{id}")]
     public IActionResult Update(int id, Animal animalIn)
     {
-        var animal = _animalService.GetById(id);
+        var animal = animalService.GetById(id);
         if (animal == null)
         {
             return NotFound();
         }
-        _animalService.Update(id, animalIn);
+        animalService.Update(id, animalIn);
         return NoContent();
     }
 
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-        var animal = _animalService.GetById(id);
+        var animal = animalService.GetById(id);
         if (animal == null)
         {
             return NotFound();
         }
-        _animalService.Delete(animal);
+        animalService.Delete(animal);
         return NoContent();
     }
 }
 
-[ApiController]
-[Route("api/[controller]")]
-public class VisitsController : ControllerBase
-{
-    private readonly VisitService _visitService;
 
-    public VisitsController(VisitService visitService)
-    {
-        _visitService = visitService;
-    }
-
-    [HttpGet("{animalId}/visits")]
-    public ActionResult<List<Visit>> GetByAnimalId(int animalId)
-    {
-        return _visitService.GetByAnimalId(animalId);
-    }
-
-    [HttpPost]
-    public ActionResult<Visit> Create(Visit visit)
-    {
-        _visitService.Create(visit);
-        return CreatedAtAction(nameof(GetByAnimalId), new { animalId = visit.AnimalId }, visit);
-    }
-}
